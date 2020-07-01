@@ -1,2 +1,1 @@
-# micropython
-Helpful libraries and other stuff for micropython
+# mcp4728 library for micropython
