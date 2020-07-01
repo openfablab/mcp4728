@@ -25,6 +25,7 @@ import mcp4728
 i2c = I2C(0, scl=Pin(27), sda=Pin(4), freq=400000)
 
 
+
 #Create the MCP4725 drivers specifying the I2C bus the MCP4728 is connected to and the I2C slave address of the sensor
 
 dac1=mcp4728.MCP4728(i2c,0x60)
@@ -32,9 +33,11 @@ dac1=mcp4728.MCP4728(i2c,0x60)
 dac2=mcp4728.MCP4728(i2c,0x61)
 
 
+
 #Set initial value, vref, gain and power mode for channel a
 
 dac1.a.config(0,1,1,0) 
+
 
 
 #Get channel b 12-bit current value
