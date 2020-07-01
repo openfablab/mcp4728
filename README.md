@@ -34,12 +34,6 @@ dac2=mcp4728.MCP4728(i2c,0x61)
 
 
 
-#Set initial value, vref, gain and power mode for channel a
-
-dac1.a.config(0,1,1,0) 
-
-
-
 #Get channel b 12-bit current value
 
 dac1.b.value
@@ -93,3 +87,8 @@ dac1.b.pdm
 #Set channel b power state. 0 for normal operation, or other to turn off most of the channel circuits and connect VOUT to GND by resistor (1: 1 kΩ, 2: 100 kΩ, 3: 500 kΩ).
 
 dac1.b.pdm=0
+
+
+#Set value, vref, gain and power mode for channel a
+
+dac1.a.config(0,1,1,0) 
