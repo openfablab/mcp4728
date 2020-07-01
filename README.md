@@ -45,20 +45,25 @@ dac1.b.normalized_value
 # Set channel b value as a floating point number in the range 0.0 to 1.0
 dac1.b.normalized_value=0.51123
 
+# Get channel d Vref
+dac1.d.vref
+
+# Set channel d Vref (voltage reference source). Set 0 for VDD or 1 for internal 2.048V reference.
+dac1.d.vref=1
+
 # Get channel c gain
 dac1.c.gain
 
-# Set channel c gain
+# Sets the gain of the channel c if the Vref for the channel is 1 (INTERNAL)
+# Has no effect if the Vref for the channel is 0 (VDD)
+# With gain set to 1, the output voltage goes from 0v to 2.048V. If a channel's gain is set
+# to 2, the voltage goes from 0v to 4.096V.
 dac1.c.gain=1
-
-# Get channel d vref
-dac1.d.vref
-
-# Set channel d vref
-dac1.d.vref=4095
 
 # Get channel b power state
 dac1.b.pdm
 
-# Set channel b power state
+# Set channel b power state. 0 for normal operation, or
+# other to turn off most of the channel circuits and connect 
+# VOUT to GND by resistor (1: 1 kΩ, 2: 100 kΩ, 3: 500 kΩ).
 dac1.b.pdm=0
